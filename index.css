@@ -975,6 +975,7 @@ a {
   margin: 0 auto;
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-wrap: nowrap;
   gap: clamp(24px, 4vw, 112px);
   height: 100%;
@@ -1000,7 +1001,7 @@ a {
   font-weight: 400;
   color: #cbd5e1;
   margin: 0;
-  text-align: left;
+  text-align: center;
   white-space: nowrap;
 }
 
@@ -1015,14 +1016,24 @@ a {
   display: block;
 }
 
+.footer__col--trademarks {
+  justify-content: center;
+  max-width: 100%;
+}
+
 .footer__col--privacy {
   justify-content: center;
 }
 
-.footer__col--dev,
-.footer__col--design,
-.footer__col--solutions {
-  gap: 0;
+.footer__trademarks {
+  font-family: "Segoe UI", "Segoe UI Emoji", system-ui, sans-serif;
+  font-size: 12px;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #94a3b8;
+  margin: 0;
+  text-align: center;
+  max-width: 720px;
 }
 
 .footer__link {
@@ -1622,24 +1633,17 @@ a {
     justify-items: center;
     align-items: start;
   }
-  /* Row 1: link columns */
-  .footer__col--dev {
-    grid-column: 1;
+  /* Row 1: trademarks (one column) */
+  .footer__col--trademarks {
+    grid-column: 1 / -1;
     grid-row: 1;
+    justify-self: center;
   }
-  .footer__col--design {
-    grid-column: 2;
-    grid-row: 1;
-  }
-  .footer__col--solutions {
-    grid-column: 3;
-    grid-row: 1;
-  }
-  /* Row 2: brand, privacy, social, copyright */
+  /* Row 2: brand, privacy, social - all centered */
   .footer__col--brand {
     grid-column: 1;
     grid-row: 2;
-    justify-self: start;
+    justify-self: center;
   }
   .footer__col--privacy {
     grid-column: 2;
@@ -1650,7 +1654,7 @@ a {
   .footer__social {
     grid-column: 3;
     grid-row: 2;
-    justify-self: end;
+    justify-self: center;
     align-self: center;
   }
   .footer__col--copyright {
@@ -2306,6 +2310,9 @@ a {
   /* Footer */
   .footer__copyright {
     font-size: 12px;
+  }
+  .footer__trademarks {
+    font-size: 11px;
   }
   .footer__link {
     font-size: 12px;
